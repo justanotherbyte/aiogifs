@@ -29,6 +29,22 @@ class TenorClient:
         data = await self.http.request(route)
         return TenorResponse(data = data)
 
+    async def trending(self, *, locale: Optional[str] = None, content_filter: Optional[ContentFilter] = "off", media_filter: Optional[MediaFilter] = None, ar_range: Optional[AspectRatio] = None, limit: Optional[int] = None, pos: Optional[int] = None, anon_id: Optional[str] = None) -> TenorResponse:
+        params = {
+            "locale": locale,
+            "contentfilter": content_filter,
+            "mediafilter": media_filter,
+            "ar_range": ar_range,
+            "limit": limit,
+            "pos": pos,
+            "anon_id": anon_id
+
+        }
+        params = self._filter_params(params)
+        route = Route("/trending", params = params)
+        data = await self.http.request(route)
+        return TenorResponse(data = data)
+
     async def close(self):
         return await self.http.cleanup()
 

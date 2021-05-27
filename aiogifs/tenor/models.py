@@ -252,7 +252,7 @@ class TenorResponse:
         
         media_objs = []
         for i in results:
-            media_obj = Media(data = i.get("media")[0])
+            media_obj = Media(data = i.get("media")[0], raw_object = i)
             media_objs.append(media_obj)
 
         return media_objs
