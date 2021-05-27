@@ -20,6 +20,9 @@ class HTTPClient:
     async def open_session(self):
         if not self.__session:
             self.__session = aiohttp.ClientSession(raise_for_status = True)
+        else:
+            if not self.__session.raise_for_status:
+                self.__session.raise_for_status = True
 
     async def request(self, route: Route) -> dict:
         if self._auth and route.params.get("key") is None:
