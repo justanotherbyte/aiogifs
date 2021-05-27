@@ -3,6 +3,7 @@ import asyncio
 from aiohttp import ClientSession # just for type hinting
 from typing import Optional
 from .types import MediaFilter, AspectRatio, ContentFilter
+from .models import TenorResponse
 
 
 class TenorClient:
@@ -11,7 +12,7 @@ class TenorClient:
         self.http = HTTPClient(api_key = self._auth, session = session)
         self.open()
 
-    async def search(self, query: str, *, locale: Optional[str] = None, content_filter: Optional[ContentFilter] = "off", media_filter: Optional[MediaFilter] = None, ar_range: Optional[AspectRatio] = None, limit: Optional[int] = None, pos: Optional[int] = None, anon_id: Optional[str] = None):
+    async def search(self, query: str, *, locale: Optional[str] = None, content_filter: Optional[ContentFilter] = "off", media_filter: Optional[MediaFilter] = None, ar_range: Optional[AspectRatio] = None, limit: Optional[int] = None, pos: Optional[int] = None, anon_id: Optional[str] = None) -> TenorResponse:
         params = {
             "q": query,
             "locale": locale,
@@ -26,7 +27,10 @@ class TenorClient:
         params = self._filter_params(params)
         route = Route("/search", params = params)
         data = await self.http.request(route)
-        return data
+        return TenorResponse(data = data)
+
+    async def close(self):
+        return await self.http.cleanup()
 
     def open(self):
         asyncio.get_event_loop().run_until_complete(self.http.open_session())

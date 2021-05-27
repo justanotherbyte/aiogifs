@@ -1,5 +1,6 @@
 from typing import List, Union, Optional
 
+
 class MP4:
     def __init__(self, *, data: dict):
         self._data = data
@@ -114,15 +115,33 @@ class MediumGIF(GIF):
     pass
 
 class Media:
-    def __init__(self, *, data: dict):
+    def __init__(self, *, data: dict, raw_object: dict):
         self._data = data
+        self._raw_data = raw_object
 
     def _create_cls(self, key: str, cls):
         obj = self._data.get(key)
         if obj is None:
             return None
         else:
-            return cls(obj)
+            return cls(data = obj)
+    @property
+    def url(self) -> str:
+        """Returns a quick access url for the `Media` object. Usually a `GIF` file type.
+
+        :return: A string containing a URL.
+        :rtype: str
+        """
+        return self._raw_data.get("url")
+
+    @property
+    def item_url(self) -> str:
+        """Returns a url that links to the official Tenor Page to the GIF.
+
+        :return: A string containing a URL.
+        :rtype: str
+        """
+        return self._raw_data.get("itemurl")
 
     @property
     def mp4(self) -> Optional[MP4]:
@@ -213,3 +232,36 @@ class Media:
         :rtype: Optional[MediumGIF]
         """
         return self._create_cls("mediumgif", MediumGIF)
+
+
+
+class TenorResponse:
+    def __init__(self, *, data: dict):
+        self._data = data
+        
+    @property
+    def media(self) -> List[Optional[Media]]:
+        """Generates the media objects and returns them in a list.
+
+        :return: A list of `Media` objects.
+        :rtype: Optional[List[Media]]
+        """
+        results = self._data.get("results")
+        if results is None or len(results) == 0:
+            return None
+        
+        media_objs = []
+        for i in results:
+            media_obj = Media(data = i.get("media")[0])
+            media_objs.append(media_obj)
+
+        return media_objs
+
+    @property
+    def raw(self) -> dict:
+        """Returns the raw json payload received from the Tenor API.
+
+        :return: The raw json payload fetched from the Tenor API.
+        :rtype: dict
+        """
+        return self._data
