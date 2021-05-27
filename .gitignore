@@ -1,0 +1,7 @@
+.vscode/
+Lib/
+Scripts/
+debug.json
+pyvenv.cfg
+tests.py
+__pycache__/
