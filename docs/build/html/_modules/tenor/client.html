@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>tenor.client</title>
+    
+      <link rel="stylesheet" href="../../_static/pygments.css">
+      <link rel="stylesheet" href="../../_static/theme.css">
+      <link rel="stylesheet" href="../../_static/sphinx_press_theme.css">
+          <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+          <link rel="stylesheet" href="../../_static/css/theme.css " type="text/css" />
+      
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+
+      <!-- sphinx script_files -->
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+
+      
+      <script src="../../_static/theme-vendors.js"></script>
+      <script src="../../_static/theme.js" defer></script>
+    
+  <link rel="index" title="Index" href="../../genindex.html" />
+  <link rel="search" title="Search" href="../../search.html" /> 
+  </head>
+
+  <body>
+    <div id="app" class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+  <router-link to="../../index.html" class="home-link">
+    
+      <span class="site-name">aiogifs</span>
+    
+  </router-link>
+
+  <div class="links">
+    <navlinks class="can-hide">
+
+
+
+    </navlinks>
+  </div>
+</navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">Quick search</span>
+    <div class="searchformwrapper">
+      <form class="search" action="../../search.html" method="get">
+        <input type="text" name="q" />
+        <input type="submit" value="Search" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="../../index.html#welcome-to-aiogifs-s-documentation">Contents:</a></span>
+      </p>
+      <ul class="">
+        
+          <li class="toctree-l1 "><a href="../../modules.html" class="reference internal ">aiogifs</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="../../tenor.html" class="reference internal ">tenor package</a>
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+</div>
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+    
+      <li><a href="../index.html">Module code</a> &raquo;</li>
+    
+    <li>tenor.client</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main">
+            
+  <h1>Source code for tenor.client</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">.http</span> <span class="kn">import</span> <span class="n">HTTPClient</span><span class="p">,</span> <span class="n">Route</span>
+<span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">from</span> <span class="nn">aiohttp</span> <span class="kn">import</span> <span class="n">ClientSession</span> <span class="c1"># just for type hinting</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span>
+<span class="kn">from</span> <span class="nn">.types</span> <span class="kn">import</span> <span class="n">MediaFilter</span><span class="p">,</span> <span class="n">AspectRatio</span><span class="p">,</span> <span class="n">ContentFilter</span>
+<span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">TenorResponse</span>
+
+
+<div class="viewcode-block" id="TenorClient"><a class="viewcode-back" href="../../tenor.html#tenor.client.TenorClient">[docs]</a><span class="k">class</span> <span class="nc">TenorClient</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">api_key</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">session</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ClientSession</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_auth</span> <span class="o">=</span> <span class="n">api_key</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">http</span> <span class="o">=</span> <span class="n">HTTPClient</span><span class="p">(</span><span class="n">api_key</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_auth</span><span class="p">,</span> <span class="n">session</span> <span class="o">=</span> <span class="n">session</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">()</span>
+
+<div class="viewcode-block" id="TenorClient.search"><a class="viewcode-back" href="../../tenor.html#tenor.client.TenorClient.search">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">search</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">locale</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">content_filter</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ContentFilter</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;off&quot;</span><span class="p">,</span> <span class="n">media_filter</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">MediaFilter</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">ar_range</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">AspectRatio</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">limit</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">pos</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">anon_id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TenorResponse</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Searches tenor with the provided query.</span>
+
+<span class="sd">        :param query: The query used to search Tenor</span>
+<span class="sd">        :type query: str</span>
+<span class="sd">        :param locale: The locale. Usually in the format of xx_YY, defaults to None</span>
+<span class="sd">        :type locale: Optional[str], optional</span>
+<span class="sd">        :param content_filter: The strength of the content filter, defaults to &quot;off&quot;</span>
+<span class="sd">        :type content_filter: Optional[ContentFilter], optional</span>
+<span class="sd">        :param media_filter: The type of Media Filter used. This filters the types of media returned, defaults to None</span>
+<span class="sd">        :type media_filter: Optional[MediaFilter], optional</span>
+<span class="sd">        :param ar_range: Aspect Ratio range. Limits the size of media returned, defaults to None</span>
+<span class="sd">        :type ar_range: Optional[AspectRatio], optional</span>
+<span class="sd">        :param limit: Limits how many results you get returned, defaults to None</span>
+<span class="sd">        :type limit: Optional[int], optional</span>
+<span class="sd">        :param pos: [description], defaults to None</span>
+<span class="sd">        :type pos: Sets a starting value to search from, optional</span>
+<span class="sd">        :param anon_id: Specify the anonymous_id tied to the given user, defaults to None</span>
+<span class="sd">        :type anon_id: Optional[str], optional</span>
+<span class="sd">        :return: Returns a TenorResponse object. Holds the media returned to us.</span>
+<span class="sd">        :rtype: TenorResponse</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;q&quot;</span><span class="p">:</span> <span class="n">query</span><span class="p">,</span>
+            <span class="s2">&quot;locale&quot;</span><span class="p">:</span> <span class="n">locale</span><span class="p">,</span>
+            <span class="s2">&quot;contentfilter&quot;</span><span class="p">:</span> <span class="n">content_filter</span><span class="p">,</span>
+            <span class="s2">&quot;mediafilter&quot;</span><span class="p">:</span> <span class="n">media_filter</span><span class="p">,</span>
+            <span class="s2">&quot;ar_range&quot;</span><span class="p">:</span> <span class="n">ar_range</span><span class="p">,</span>
+            <span class="s2">&quot;limit&quot;</span><span class="p">:</span> <span class="n">limit</span><span class="p">,</span>
+            <span class="s2">&quot;pos&quot;</span><span class="p">:</span> <span class="n">pos</span><span class="p">,</span>
+            <span class="s2">&quot;anon_id&quot;</span><span class="p">:</span> <span class="n">anon_id</span>
+
+        <span class="p">}</span>
+        <span class="n">params</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_filter_params</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+        <span class="n">route</span> <span class="o">=</span> <span class="n">Route</span><span class="p">(</span><span class="s2">&quot;/search&quot;</span><span class="p">,</span> <span class="n">params</span> <span class="o">=</span> <span class="n">params</span><span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">route</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">TenorResponse</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="TenorClient.trending"><a class="viewcode-back" href="../../tenor.html#tenor.client.TenorClient.trending">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">trending</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">locale</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">content_filter</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ContentFilter</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;off&quot;</span><span class="p">,</span> <span class="n">media_filter</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">MediaFilter</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">ar_range</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">AspectRatio</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">limit</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">pos</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">anon_id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TenorResponse</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Fetches currently trending media on Tenor</span>
+
+<span class="sd">        :param locale: The locale. Usually in the format of xx_YY, defaults to None</span>
+<span class="sd">        :type locale: Optional[str], optional</span>
+<span class="sd">        :param content_filter: The strength of the content filter, defaults to &quot;off&quot;</span>
+<span class="sd">        :type content_filter: Optional[ContentFilter], optional</span>
+<span class="sd">        :param media_filter: The type of Media Filter used. This filters the types of media returned, defaults to None</span>
+<span class="sd">        :type media_filter: Optional[MediaFilter], optional</span>
+<span class="sd">        :param ar_range: Aspect Ratio range. Limits the size of media returned, defaults to None</span>
+<span class="sd">        :type ar_range: Optional[AspectRatio], optional</span>
+<span class="sd">        :param limit: Limits how many results you get returned, defaults to None</span>
+<span class="sd">        :type limit: Optional[int], optional</span>
+<span class="sd">        :param pos: [description], defaults to None</span>
+<span class="sd">        :type pos: Sets a starting value to search from, optional</span>
+<span class="sd">        :param anon_id: Specify the anonymous_id tied to the given user, defaults to None</span>
+<span class="sd">        :type anon_id: Optional[str], optional</span>
+<span class="sd">        :return: Returns a TenorResponse object. Holds the media returned to us.</span>
+<span class="sd">        :rtype: TenorResponse</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;locale&quot;</span><span class="p">:</span> <span class="n">locale</span><span class="p">,</span>
+            <span class="s2">&quot;contentfilter&quot;</span><span class="p">:</span> <span class="n">content_filter</span><span class="p">,</span>
+            <span class="s2">&quot;mediafilter&quot;</span><span class="p">:</span> <span class="n">media_filter</span><span class="p">,</span>
+            <span class="s2">&quot;ar_range&quot;</span><span class="p">:</span> <span class="n">ar_range</span><span class="p">,</span>
+            <span class="s2">&quot;limit&quot;</span><span class="p">:</span> <span class="n">limit</span><span class="p">,</span>
+            <span class="s2">&quot;pos&quot;</span><span class="p">:</span> <span class="n">pos</span><span class="p">,</span>
+            <span class="s2">&quot;anon_id&quot;</span><span class="p">:</span> <span class="n">anon_id</span>
+
+        <span class="p">}</span>
+        <span class="n">params</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_filter_params</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+        <span class="n">route</span> <span class="o">=</span> <span class="n">Route</span><span class="p">(</span><span class="s2">&quot;/trending&quot;</span><span class="p">,</span> <span class="n">params</span> <span class="o">=</span> <span class="n">params</span><span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">route</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">TenorResponse</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="TenorClient.close"><a class="viewcode-back" href="../../tenor.html#tenor.client.TenorClient.close">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Cleans up. Primarily HTTP Session closing.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">cleanup</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="TenorClient.open"><a class="viewcode-back" href="../../tenor.html#tenor.client.TenorClient.open">[docs]</a>    <span class="k">def</span> <span class="nf">open</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Called in __init__. Opens the aiohttp.ClientSession()</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">open_session</span><span class="p">())</span></div>
+
+    <span class="k">def</span>  <span class="nf">_filter_params</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">map</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+        <span class="n">new_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">map</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">v</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">}</span>
+        <span class="k">return</span> <span class="n">new_dict</span></div>
+</pre></div>
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+</ul><div class="footer" role="contentinfo">
+      &#169; Copyright 2021, moonie.
+    <br>
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.0.2 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+</div>
+            </div>
+          </div>
+      </page>
+    </div>
+    
+    
+  </body>
+</html>

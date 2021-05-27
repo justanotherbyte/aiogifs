@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>tenor.models</title>
+    
+      <link rel="stylesheet" href="../../_static/pygments.css">
+      <link rel="stylesheet" href="../../_static/theme.css">
+      <link rel="stylesheet" href="../../_static/sphinx_press_theme.css">
+          <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+          <link rel="stylesheet" href="../../_static/css/theme.css " type="text/css" />
+      
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+
+      <!-- sphinx script_files -->
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+
+      
+      <script src="../../_static/theme-vendors.js"></script>
+      <script src="../../_static/theme.js" defer></script>
+    
+  <link rel="index" title="Index" href="../../genindex.html" />
+  <link rel="search" title="Search" href="../../search.html" /> 
+  </head>
+
+  <body>
+    <div id="app" class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+  <router-link to="../../index.html" class="home-link">
+    
+      <span class="site-name">aiogifs</span>
+    
+  </router-link>
+
+  <div class="links">
+    <navlinks class="can-hide">
+
+
+
+    </navlinks>
+  </div>
+</navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">Quick search</span>
+    <div class="searchformwrapper">
+      <form class="search" action="../../search.html" method="get">
+        <input type="text" name="q" />
+        <input type="submit" value="Search" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="../../index.html#welcome-to-aiogifs-s-documentation">Contents:</a></span>
+      </p>
+      <ul class="">
+        
+          <li class="toctree-l1 "><a href="../../modules.html" class="reference internal ">aiogifs</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="../../tenor.html" class="reference internal ">tenor package</a>
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+</div>
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+    
+      <li><a href="../index.html">Module code</a> &raquo;</li>
+    
+    <li>tenor.models</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main">
+            
+  <h1>Source code for tenor.models</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Union</span><span class="p">,</span> <span class="n">Optional</span>
+
+
+<div class="viewcode-block" id="MP4"><a class="viewcode-back" href="../../tenor.html#tenor.models.MP4">[docs]</a><span class="k">class</span> <span class="nc">MP4</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_data</span> <span class="o">=</span> <span class="n">data</span>
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">size</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Returns an integer representing the size of the `MP4`.</span>
+
+<span class="sd">        :return: An integer representing the size of the `MP4`.</span>
+<span class="sd">        :rtype: int</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;size&quot;</span><span class="p">)</span>
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">dimensions</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot;Returns a List of integers representing x and y properties</span>
+
+<span class="sd">        :return: A List of integers.</span>
+<span class="sd">        :rtype: List[int]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;dims&quot;</span><span class="p">)</span>
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">duration</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">int</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot;Returns either a float or an integer representing how long the MP4 is in milliseconds.</span>
+
+<span class="sd">        :return: A float or an integer representing how long the MP4 is in milliseconds.</span>
+<span class="sd">        :rtype: Union[float, int]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;duration&quot;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">preview_url</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Returns a preview_url. This is usually of a `png` file type.</span>
+
+<span class="sd">        :return: A preview_url.</span>
+<span class="sd">        :rtype: str</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;preview&quot;</span><span class="p">)</span>
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">url</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Returns the `real` url of the MP4.</span>
+
+<span class="sd">        :return: The url of our MP4</span>
+<span class="sd">        :rtype: str</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;url&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="GIF"><a class="viewcode-back" href="../../tenor.html#tenor.models.GIF">[docs]</a><span class="k">class</span> <span class="nc">GIF</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_data</span> <span class="o">=</span> <span class="n">data</span>
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">size</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Returns an integer representing the size of the `GIF`.</span>
+
+<span class="sd">        :return: An integer representing the size of the `GIF`.</span>
+<span class="sd">        :rtype: int</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;size&quot;</span><span class="p">)</span>
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">dimensions</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot;Returns a List of integers representing x and y properties</span>
+
+<span class="sd">        :return: A List of integers.</span>
+<span class="sd">        :rtype: List[int]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;dims&quot;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">preview_url</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Returns a preview_url. This is usually of a `png` file type.</span>
+
+<span class="sd">        :return: A preview_url.</span>
+<span class="sd">        :rtype: str</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;preview&quot;</span><span class="p">)</span>
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">url</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Returns the `real` url of the GIF.</span>
+
+<span class="sd">        :return: The url of our GIF</span>
+<span class="sd">        :rtype: str</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;url&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="WebM"><a class="viewcode-back" href="../../tenor.html#tenor.models.WebM">[docs]</a><span class="k">class</span> <span class="nc">WebM</span><span class="p">(</span><span class="n">GIF</span><span class="p">):</span>
+    <span class="k">pass</span></div>
+
+<div class="viewcode-block" id="TinyMP4"><a class="viewcode-back" href="../../tenor.html#tenor.models.TinyMP4">[docs]</a><span class="k">class</span> <span class="nc">TinyMP4</span><span class="p">(</span><span class="n">MP4</span><span class="p">):</span>
+    <span class="k">pass</span></div>
+
+<div class="viewcode-block" id="LoopedMP4"><a class="viewcode-back" href="../../tenor.html#tenor.models.LoopedMP4">[docs]</a><span class="k">class</span> <span class="nc">LoopedMP4</span><span class="p">(</span><span class="n">MP4</span><span class="p">):</span>
+    <span class="k">pass</span></div>
+
+<div class="viewcode-block" id="NanoMP4"><a class="viewcode-back" href="../../tenor.html#tenor.models.NanoMP4">[docs]</a><span class="k">class</span> <span class="nc">NanoMP4</span><span class="p">(</span><span class="n">MP4</span><span class="p">):</span>
+    <span class="k">pass</span></div>
+
+<div class="viewcode-block" id="TinyGIF"><a class="viewcode-back" href="../../tenor.html#tenor.models.TinyGIF">[docs]</a><span class="k">class</span> <span class="nc">TinyGIF</span><span class="p">(</span><span class="n">GIF</span><span class="p">):</span>
+    <span class="k">pass</span></div>
+
+<div class="viewcode-block" id="NanoGIF"><a class="viewcode-back" href="../../tenor.html#tenor.models.NanoGIF">[docs]</a><span class="k">class</span> <span class="nc">NanoGIF</span><span class="p">(</span><span class="n">GIF</span><span class="p">):</span>
+    <span class="k">pass</span></div>
+
+<div class="viewcode-block" id="TinyWebM"><a class="viewcode-back" href="../../tenor.html#tenor.models.TinyWebM">[docs]</a><span class="k">class</span> <span class="nc">TinyWebM</span><span class="p">(</span><span class="n">WebM</span><span class="p">):</span> 
+    <span class="k">pass</span></div>
+
+<div class="viewcode-block" id="MediumGIF"><a class="viewcode-back" href="../../tenor.html#tenor.models.MediumGIF">[docs]</a><span class="k">class</span> <span class="nc">MediumGIF</span><span class="p">(</span><span class="n">GIF</span><span class="p">):</span>
+    <span class="k">pass</span></div>
+
+<div class="viewcode-block" id="Media"><a class="viewcode-back" href="../../tenor.html#tenor.models.Media">[docs]</a><span class="k">class</span> <span class="nc">Media</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">raw_object</span><span class="p">:</span> <span class="nb">dict</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_data</span> <span class="o">=</span> <span class="n">data</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_raw_data</span> <span class="o">=</span> <span class="n">raw_object</span>
+
+    <span class="k">def</span> <span class="nf">_create_cls</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="bp">cls</span><span class="p">):</span>
+        <span class="n">obj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">obj</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">obj</span><span class="p">)</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">url</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Returns a quick access url for the `Media` object. Usually a `GIF` file type.</span>
+
+<span class="sd">        :return: A string containing a URL.</span>
+<span class="sd">        :rtype: str</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_raw_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;url&quot;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">item_url</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Returns a url that links to the official Tenor Page to the GIF.</span>
+
+<span class="sd">        :return: A string containing a URL.</span>
+<span class="sd">        :rtype: str</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_raw_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;itemurl&quot;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">mp4</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">MP4</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot;Returns a `MP4` object. Contains Media Properties.</span>
+
+<span class="sd">        :return: Returns a `MP4` object.</span>
+<span class="sd">        :rtype: Optional[MP4]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_create_cls</span><span class="p">(</span><span class="s2">&quot;mp4&quot;</span><span class="p">,</span> <span class="n">MP4</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">gif</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">GIF</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot;Returns a `GIF` object. Contains Media Properties.</span>
+
+<span class="sd">        :return: Returns a `GIF` object.</span>
+<span class="sd">        :rtype: Optional[GIF]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_create_cls</span><span class="p">(</span><span class="s2">&quot;gif&quot;</span><span class="p">,</span> <span class="n">GIF</span><span class="p">)</span>
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">webm</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">WebM</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot;Returns a `WebM` object. Contains Media Properties.</span>
+
+<span class="sd">        :return: Returns a `WebM` object.</span>
+<span class="sd">        :rtype: Optional[WebM]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_create_cls</span><span class="p">(</span><span class="s2">&quot;webm&quot;</span><span class="p">,</span> <span class="n">WebM</span><span class="p">)</span>
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">tiny_mp4</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">TinyMP4</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot;Returns a `TinyMP4` object. Contains Media Properties.</span>
+
+<span class="sd">        :return: Returns a `TinyMP4` object. Subclasses `MP4`.</span>
+<span class="sd">        :rtype: Optional[TinyMP4]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_create_cls</span><span class="p">(</span><span class="s2">&quot;tinymp4&quot;</span><span class="p">,</span> <span class="n">TinyMP4</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">looped_mp4</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">LoopedMP4</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot;Returns a `LoopedMP4` object. Contains Media Properties.</span>
+
+<span class="sd">        :return: Returns a `LoopedMP4` object. Subclasses `MP4`.</span>
+<span class="sd">        :rtype: Optional[LoopedMP4]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_create_cls</span><span class="p">(</span><span class="s2">&quot;loopedmp4&quot;</span><span class="p">,</span> <span class="n">LoopedMP4</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">nano_mp4</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">NanoMP4</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot;Returns a `NanoMP4` object. Contains Media Properties.</span>
+
+<span class="sd">        :return: Returns a `NanoMP4` object. Subclasses `MP4`.</span>
+<span class="sd">        :rtype: Optional[NanoMP4]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_create_cls</span><span class="p">(</span><span class="s2">&quot;nanomp4&quot;</span><span class="p">,</span> <span class="n">NanoMP4</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">tiny_gif</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">TinyGIF</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot;Returns a `TinyGIF` object. Contains Media Properties.</span>
+
+<span class="sd">        :return: Returns a `TinyGIF` object. Subclasses `GIF`.</span>
+<span class="sd">        :rtype: Optional[TinyGIF]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_create_cls</span><span class="p">(</span><span class="s2">&quot;tinygif&quot;</span><span class="p">,</span> <span class="n">TinyGIF</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">nano_gif</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">NanoGIF</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot;Returns a `NanoGIF` object. Contains Media Properties.</span>
+
+<span class="sd">        :return: Returns a `NanoGIF` object. Subclasses `GIF`.</span>
+<span class="sd">        :rtype: Optional[NanoGIF]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_create_cls</span><span class="p">(</span><span class="s2">&quot;nanogif&quot;</span><span class="p">,</span> <span class="n">NanoGIF</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">tiny_webm</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">TinyWebM</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot;Returns a `TinyWebM` object. Contains Media Properties.</span>
+
+<span class="sd">        :return: Returns a `TinyWebM` object. Subclasses `WebM`.</span>
+<span class="sd">        :rtype: Optional[TinyWebM]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_create_cls</span><span class="p">(</span><span class="s2">&quot;tinywebm&quot;</span><span class="p">,</span> <span class="n">TinyWebM</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">medium_gif</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">MediumGIF</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot;Returns a `MediumGIF` object. Contains Media Properties.</span>
+
+<span class="sd">        :return: Returns a `MediumGIF` object. Subclasses `GIF`.</span>
+<span class="sd">        :rtype: Optional[MediumGIF]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_create_cls</span><span class="p">(</span><span class="s2">&quot;mediumgif&quot;</span><span class="p">,</span> <span class="n">MediumGIF</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="TenorResponse"><a class="viewcode-back" href="../../tenor.html#tenor.models.TenorResponse">[docs]</a><span class="k">class</span> <span class="nc">TenorResponse</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_data</span> <span class="o">=</span> <span class="n">data</span>
+        
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">media</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Optional</span><span class="p">[</span><span class="n">Media</span><span class="p">]]:</span>
+        <span class="sd">&quot;&quot;&quot;Generates the media objects and returns them in a list.</span>
+
+<span class="sd">        :return: A list of `Media` objects.</span>
+<span class="sd">        :rtype: Optional[List[Media]]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;results&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">results</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">results</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        
+        <span class="n">media_objs</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+            <span class="n">media_obj</span> <span class="o">=</span> <span class="n">Media</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">i</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;media&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="n">raw_object</span> <span class="o">=</span> <span class="n">i</span><span class="p">)</span>
+            <span class="n">media_objs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">media_obj</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">media_objs</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">raw</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Returns the raw json payload received from the Tenor API.</span>
+
+<span class="sd">        :return: The raw json payload fetched from the Tenor API.</span>
+<span class="sd">        :rtype: dict</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span></div>
+</pre></div>
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+</ul><div class="footer" role="contentinfo">
+      &#169; Copyright 2021, moonie.
+    <br>
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.0.2 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+</div>
+            </div>
+          </div>
+      </page>
+    </div>
+    
+    
+  </body>
+</html>
