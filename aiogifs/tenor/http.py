@@ -13,12 +13,13 @@ class Route:
 
 
 class HTTPClient:
-    def __init__(self, *, api_key: Optional[str] = None):
-        self.__session = None
+    def __init__(self, *, api_key: Optional[str] = None, session: Optional[aiohttp.ClientSession] = None):
+        self.__session = session
         self._auth = api_key
     
     async def open_session(self):
-        self.__session = aiohttp.ClientSession()
+        if not self.__session:
+            self.__session = aiohttp.ClientSession()
 
     async def request(self, route: Route) -> dict:
         if self._auth and route.params.get("key") is None:

@@ -1,13 +1,14 @@
 from .http import HTTPClient, Route
 import asyncio
+from aiohttp import ClientSession # just for type hinting
 from typing import Optional
 from .types import MediaFilter, AspectRatio, ContentFilter
 
 
 class TenorClient:
-    def __init__(self, *, api_key: str):
+    def __init__(self, *, api_key: str, session: Optional[ClientSession] = None):
         self._auth = api_key
-        self.http = HTTPClient(api_key = self._auth)
+        self.http = HTTPClient(api_key = self._auth, session = session)
         self.open()
 
     async def search(self, query: str, *, locale: Optional[str] = None, content_filter: Optional[ContentFilter] = "off", media_filter: Optional[MediaFilter] = None, ar_range: Optional[AspectRatio] = None, limit: Optional[int] = None, pos: Optional[int] = None, anon_id: Optional[str] = None):
