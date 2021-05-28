@@ -8,13 +8,10 @@
       <link rel="stylesheet" href="_static/pygments.css">
       <link rel="stylesheet" href="_static/theme.css">
       <link rel="stylesheet" href="_static/sphinx_press_theme.css">
-          <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-          <link rel="stylesheet" href="_static/css/theme.css " type="text/css" />
       
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
 
       <!-- sphinx script_files -->
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
@@ -140,24 +137,24 @@
 <div class="section" id="module-tenor.client">
 <span id="tenor-client-module"></span><h2>tenor.client module<a class="headerlink" href="#module-tenor.client" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
-<dt class="sig sig-object py" id="tenor.client.TenorClient">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">tenor.client.</span></span><span class="sig-name descname"><span class="pre">TenorClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_key</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">session</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">aiohttp.client.ClientSession</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tenor/client.html#TenorClient"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tenor.client.TenorClient" title="Permalink to this definition">¶</a></dt>
+<dt id="tenor.client.TenorClient">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">tenor.client.</span></code><code class="sig-name descname"><span class="pre">TenorClient</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_key</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">session</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">aiohttp.client.ClientSession</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tenor/client.html#TenorClient"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tenor.client.TenorClient" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <dl class="py method">
-<dt class="sig sig-object py" id="tenor.client.TenorClient.close">
-<em class="property"><span class="pre">async</span> </em><span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tenor/client.html#TenorClient.close"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tenor.client.TenorClient.close" title="Permalink to this definition">¶</a></dt>
+<dt id="tenor.client.TenorClient.close">
+<em class="property"><span class="pre">async</span> </em><code class="sig-name descname"><span class="pre">close</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tenor/client.html#TenorClient.close"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tenor.client.TenorClient.close" title="Permalink to this definition">¶</a></dt>
 <dd><p>Cleans up. Primarily HTTP Session closing.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="tenor.client.TenorClient.open">
-<span class="sig-name descname"><span class="pre">open</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tenor/client.html#TenorClient.open"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tenor.client.TenorClient.open" title="Permalink to this definition">¶</a></dt>
+<dt id="tenor.client.TenorClient.open">
+<code class="sig-name descname"><span class="pre">open</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tenor/client.html#TenorClient.open"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tenor.client.TenorClient.open" title="Permalink to this definition">¶</a></dt>
 <dd><p>Called in __init__. Opens the aiohttp.ClientSession()</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="tenor.client.TenorClient.search">
-<em class="property"><span class="pre">async</span> </em><span class="sig-name descname"><span class="pre">search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">locale</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">content_filter</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#tenor.types.ContentFilter" title="tenor.types.ContentFilter"><span class="pre">tenor.types.ContentFilter</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'off'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">media_filter</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#tenor.types.MediaFilter" title="tenor.types.MediaFilter"><span class="pre">tenor.types.MediaFilter</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ar_range</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#tenor.types.AspectRatio" title="tenor.types.AspectRatio"><span class="pre">tenor.types.AspectRatio</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pos</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">anon_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#tenor.models.TenorResponse" title="tenor.models.TenorResponse"><span class="pre">tenor.models.TenorResponse</span></a><a class="reference internal" href="_modules/tenor/client.html#TenorClient.search"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tenor.client.TenorClient.search" title="Permalink to this definition">¶</a></dt>
+<dt id="tenor.client.TenorClient.search">
+<em class="property"><span class="pre">async</span> </em><code class="sig-name descname"><span class="pre">search</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">locale</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">content_filter</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#tenor.types.ContentFilter" title="tenor.types.ContentFilter"><span class="pre">tenor.types.ContentFilter</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'off'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">media_filter</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#tenor.types.MediaFilter" title="tenor.types.MediaFilter"><span class="pre">tenor.types.MediaFilter</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ar_range</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#tenor.types.AspectRatio" title="tenor.types.AspectRatio"><span class="pre">tenor.types.AspectRatio</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pos</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">anon_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#tenor.models.TenorResponse" title="tenor.models.TenorResponse"><span class="pre">tenor.models.TenorResponse</span></a><a class="reference internal" href="_modules/tenor/client.html#TenorClient.search"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tenor.client.TenorClient.search" title="Permalink to this definition">¶</a></dt>
 <dd><p>Searches tenor with the provided query.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -182,8 +179,8 @@
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="tenor.client.TenorClient.trending">
-<em class="property"><span class="pre">async</span> </em><span class="sig-name descname"><span class="pre">trending</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">locale</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">content_filter</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#tenor.types.ContentFilter" title="tenor.types.ContentFilter"><span class="pre">tenor.types.ContentFilter</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'off'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">media_filter</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#tenor.types.MediaFilter" title="tenor.types.MediaFilter"><span class="pre">tenor.types.MediaFilter</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ar_range</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#tenor.types.AspectRatio" title="tenor.types.AspectRatio"><span class="pre">tenor.types.AspectRatio</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pos</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">anon_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#tenor.models.TenorResponse" title="tenor.models.TenorResponse"><span class="pre">tenor.models.TenorResponse</span></a><a class="reference internal" href="_modules/tenor/client.html#TenorClient.trending"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tenor.client.TenorClient.trending" title="Permalink to this definition">¶</a></dt>
+<dt id="tenor.client.TenorClient.trending">
+<em class="property"><span class="pre">async</span> </em><code class="sig-name descname"><span class="pre">trending</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">locale</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">content_filter</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#tenor.types.ContentFilter" title="tenor.types.ContentFilter"><span class="pre">tenor.types.ContentFilter</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'off'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">media_filter</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#tenor.types.MediaFilter" title="tenor.types.MediaFilter"><span class="pre">tenor.types.MediaFilter</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ar_range</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#tenor.types.AspectRatio" title="tenor.types.AspectRatio"><span class="pre">tenor.types.AspectRatio</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pos</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">anon_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#tenor.models.TenorResponse" title="tenor.models.TenorResponse"><span class="pre">tenor.models.TenorResponse</span></a><a class="reference internal" href="_modules/tenor/client.html#TenorClient.trending"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tenor.client.TenorClient.trending" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fetches currently trending media on Tenor</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -212,33 +209,33 @@
 <div class="section" id="module-tenor.http">
 <span id="tenor-http-module"></span><h2>tenor.http module<a class="headerlink" href="#module-tenor.http" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
-<dt class="sig sig-object py" id="tenor.http.HTTPClient">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">tenor.http.</span></span><span class="sig-name descname"><span class="pre">HTTPClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_key</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">session</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">aiohttp.client.ClientSession</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tenor/http.html#HTTPClient"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tenor.http.HTTPClient" title="Permalink to this definition">¶</a></dt>
+<dt id="tenor.http.HTTPClient">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">tenor.http.</span></code><code class="sig-name descname"><span class="pre">HTTPClient</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_key</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">session</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">aiohttp.client.ClientSession</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tenor/http.html#HTTPClient"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tenor.http.HTTPClient" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <dl class="py method">
-<dt class="sig sig-object py" id="tenor.http.HTTPClient.cleanup">
-<em class="property"><span class="pre">async</span> </em><span class="sig-name descname"><span class="pre">cleanup</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tenor/http.html#HTTPClient.cleanup"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tenor.http.HTTPClient.cleanup" title="Permalink to this definition">¶</a></dt>
+<dt id="tenor.http.HTTPClient.cleanup">
+<em class="property"><span class="pre">async</span> </em><code class="sig-name descname"><span class="pre">cleanup</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tenor/http.html#HTTPClient.cleanup"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tenor.http.HTTPClient.cleanup" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="tenor.http.HTTPClient.open_session">
-<em class="property"><span class="pre">async</span> </em><span class="sig-name descname"><span class="pre">open_session</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tenor/http.html#HTTPClient.open_session"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tenor.http.HTTPClient.open_session" title="Permalink to this definition">¶</a></dt>
+<dt id="tenor.http.HTTPClient.open_session">
+<em class="property"><span class="pre">async</span> </em><code class="sig-name descname"><span class="pre">open_session</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tenor/http.html#HTTPClient.open_session"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tenor.http.HTTPClient.open_session" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="tenor.http.HTTPClient.request">
-<em class="property"><span class="pre">async</span> </em><span class="sig-name descname"><span class="pre">request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">route</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#tenor.http.Route" title="tenor.http.Route"><span class="pre">tenor.http.Route</span></a></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="reference internal" href="_modules/tenor/http.html#HTTPClient.request"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tenor.http.HTTPClient.request" title="Permalink to this definition">¶</a></dt>
+<dt id="tenor.http.HTTPClient.request">
+<em class="property"><span class="pre">async</span> </em><code class="sig-name descname"><span class="pre">request</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">route</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#tenor.http.Route" title="tenor.http.Route"><span class="pre">tenor.http.Route</span></a></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="reference internal" href="_modules/tenor/http.html#HTTPClient.request"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tenor.http.HTTPClient.request" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
-<dt class="sig sig-object py" id="tenor.http.Route">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">tenor.http.</span></span><span class="sig-name descname"><span class="pre">Route</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">endpoint</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'GET'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tenor/http.html#Route"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tenor.http.Route" title="Permalink to this definition">¶</a></dt>
+<dt id="tenor.http.Route">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">tenor.http.</span></code><code class="sig-name descname"><span class="pre">Route</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">endpoint</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'GET'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tenor/http.html#Route"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tenor.http.Route" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="tenor.http.Route.BASE">
-<span class="sig-name descname"><span class="pre">BASE</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'https://g.tenor.com/v1'</span></em><a class="headerlink" href="#tenor.http.Route.BASE" title="Permalink to this definition">¶</a></dt>
+<dt id="tenor.http.Route.BASE">
+<code class="sig-name descname"><span class="pre">BASE</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'https://g.tenor.com/v1'</span></em><a class="headerlink" href="#tenor.http.Route.BASE" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -247,12 +244,12 @@
 <div class="section" id="module-tenor.models">
 <span id="tenor-models-module"></span><h2>tenor.models module<a class="headerlink" href="#module-tenor.models" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
-<dt class="sig sig-object py" id="tenor.models.GIF">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">tenor.models.</span></span><span class="sig-name descname"><span class="pre">GIF</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tenor/models.html#GIF"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tenor.models.GIF" title="Permalink to this definition">¶</a></dt>
+<dt id="tenor.models.GIF">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">tenor.models.</span></code><code class="sig-name descname"><span class="pre">GIF</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tenor/models.html#GIF"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tenor.models.GIF" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<dl class="py property">
-<dt class="sig sig-object py" id="tenor.models.GIF.dimensions">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">dimensions</span></span><em class="property"><span class="pre">:</span> <span class="pre">List[int]</span></em><a class="headerlink" href="#tenor.models.GIF.dimensions" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt id="tenor.models.GIF.dimensions">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">dimensions</span></code><a class="headerlink" href="#tenor.models.GIF.dimensions" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a List of integers representing x and y properties</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -264,9 +261,9 @@
 </dl>
 </dd></dl>
 
-<dl class="py property">
-<dt class="sig sig-object py" id="tenor.models.GIF.preview_url">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">preview_url</span></span><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="headerlink" href="#tenor.models.GIF.preview_url" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt id="tenor.models.GIF.preview_url">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">preview_url</span></code><a class="headerlink" href="#tenor.models.GIF.preview_url" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a preview_url. This is usually of a <cite>png</cite> file type.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -278,9 +275,9 @@
 </dl>
 </dd></dl>
 
-<dl class="py property">
-<dt class="sig sig-object py" id="tenor.models.GIF.size">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">size</span></span><em class="property"><span class="pre">:</span> <span class="pre">int</span></em><a class="headerlink" href="#tenor.models.GIF.size" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt id="tenor.models.GIF.size">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">size</span></code><a class="headerlink" href="#tenor.models.GIF.size" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns an integer representing the size of the <cite>GIF</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -292,9 +289,9 @@
 </dl>
 </dd></dl>
 
-<dl class="py property">
-<dt class="sig sig-object py" id="tenor.models.GIF.url">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">url</span></span><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="headerlink" href="#tenor.models.GIF.url" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt id="tenor.models.GIF.url">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">url</span></code><a class="headerlink" href="#tenor.models.GIF.url" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the <cite>real</cite> url of the GIF.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -309,18 +306,18 @@
 </dd></dl>
 
 <dl class="py class">
-<dt class="sig sig-object py" id="tenor.models.LoopedMP4">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">tenor.models.</span></span><span class="sig-name descname"><span class="pre">LoopedMP4</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tenor/models.html#LoopedMP4"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tenor.models.LoopedMP4" title="Permalink to this definition">¶</a></dt>
+<dt id="tenor.models.LoopedMP4">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">tenor.models.</span></code><code class="sig-name descname"><span class="pre">LoopedMP4</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tenor/models.html#LoopedMP4"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tenor.models.LoopedMP4" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#tenor.models.MP4" title="tenor.models.MP4"><code class="xref py py-class docutils literal notranslate"><span class="pre">tenor.models.MP4</span></code></a></p>
 </dd></dl>
 
 <dl class="py class">
-<dt class="sig sig-object py" id="tenor.models.MP4">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">tenor.models.</span></span><span class="sig-name descname"><span class="pre">MP4</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tenor/models.html#MP4"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tenor.models.MP4" title="Permalink to this definition">¶</a></dt>
+<dt id="tenor.models.MP4">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">tenor.models.</span></code><code class="sig-name descname"><span class="pre">MP4</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tenor/models.html#MP4"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tenor.models.MP4" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<dl class="py property">
-<dt class="sig sig-object py" id="tenor.models.MP4.dimensions">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">dimensions</span></span><em class="property"><span class="pre">:</span> <span class="pre">List[int]</span></em><a class="headerlink" href="#tenor.models.MP4.dimensions" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt id="tenor.models.MP4.dimensions">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">dimensions</span></code><a class="headerlink" href="#tenor.models.MP4.dimensions" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a List of integers representing x and y properties</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -332,9 +329,9 @@
 </dl>
 </dd></dl>
 
-<dl class="py property">
-<dt class="sig sig-object py" id="tenor.models.MP4.duration">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">duration</span></span><em class="property"><span class="pre">:</span> <span class="pre">Union[float,</span> <span class="pre">int]</span></em><a class="headerlink" href="#tenor.models.MP4.duration" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt id="tenor.models.MP4.duration">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">duration</span></code><a class="headerlink" href="#tenor.models.MP4.duration" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns either a float or an integer representing how long the MP4 is in milliseconds.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -346,9 +343,9 @@
 </dl>
 </dd></dl>
 
-<dl class="py property">
-<dt class="sig sig-object py" id="tenor.models.MP4.preview_url">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">preview_url</span></span><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="headerlink" href="#tenor.models.MP4.preview_url" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt id="tenor.models.MP4.preview_url">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">preview_url</span></code><a class="headerlink" href="#tenor.models.MP4.preview_url" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a preview_url. This is usually of a <cite>png</cite> file type.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -360,9 +357,9 @@
 </dl>
 </dd></dl>
 
-<dl class="py property">
-<dt class="sig sig-object py" id="tenor.models.MP4.size">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">size</span></span><em class="property"><span class="pre">:</span> <span class="pre">int</span></em><a class="headerlink" href="#tenor.models.MP4.size" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt id="tenor.models.MP4.size">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">size</span></code><a class="headerlink" href="#tenor.models.MP4.size" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns an integer representing the size of the <cite>MP4</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -374,9 +371,9 @@
 </dl>
 </dd></dl>
 
-<dl class="py property">
-<dt class="sig sig-object py" id="tenor.models.MP4.url">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">url</span></span><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="headerlink" href="#tenor.models.MP4.url" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt id="tenor.models.MP4.url">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">url</span></code><a class="headerlink" href="#tenor.models.MP4.url" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the <cite>real</cite> url of the MP4.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -391,12 +388,12 @@
 </dd></dl>
 
 <dl class="py class">
-<dt class="sig sig-object py" id="tenor.models.Media">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">tenor.models.</span></span><span class="sig-name descname"><span class="pre">Media</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raw_object</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tenor/models.html#Media"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tenor.models.Media" title="Permalink to this definition">¶</a></dt>
+<dt id="tenor.models.Media">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">tenor.models.</span></code><code class="sig-name descname"><span class="pre">Media</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raw_object</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tenor/models.html#Media"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tenor.models.Media" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<dl class="py property">
-<dt class="sig sig-object py" id="tenor.models.Media.gif">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">gif</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional[tenor.models.GIF]</span></em><a class="headerlink" href="#tenor.models.Media.gif" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt id="tenor.models.Media.gif">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">gif</span></code><a class="headerlink" href="#tenor.models.Media.gif" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a <cite>GIF</cite> object. Contains Media Properties.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -408,9 +405,9 @@
 </dl>
 </dd></dl>
 
-<dl class="py property">
-<dt class="sig sig-object py" id="tenor.models.Media.item_url">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">item_url</span></span><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="headerlink" href="#tenor.models.Media.item_url" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt id="tenor.models.Media.item_url">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">item_url</span></code><a class="headerlink" href="#tenor.models.Media.item_url" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a url that links to the official Tenor Page to the GIF.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -422,9 +419,9 @@
 </dl>
 </dd></dl>
 
-<dl class="py property">
-<dt class="sig sig-object py" id="tenor.models.Media.looped_mp4">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">looped_mp4</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional[tenor.models.LoopedMP4]</span></em><a class="headerlink" href="#tenor.models.Media.looped_mp4" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt id="tenor.models.Media.looped_mp4">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">looped_mp4</span></code><a class="headerlink" href="#tenor.models.Media.looped_mp4" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a <cite>LoopedMP4</cite> object. Contains Media Properties.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -436,9 +433,9 @@
 </dl>
 </dd></dl>
 
-<dl class="py property">
-<dt class="sig sig-object py" id="tenor.models.Media.medium_gif">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">medium_gif</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional[tenor.models.MediumGIF]</span></em><a class="headerlink" href="#tenor.models.Media.medium_gif" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt id="tenor.models.Media.medium_gif">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">medium_gif</span></code><a class="headerlink" href="#tenor.models.Media.medium_gif" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a <cite>MediumGIF</cite> object. Contains Media Properties.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -450,9 +447,9 @@
 </dl>
 </dd></dl>
 
-<dl class="py property">
-<dt class="sig sig-object py" id="tenor.models.Media.mp4">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">mp4</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional[tenor.models.MP4]</span></em><a class="headerlink" href="#tenor.models.Media.mp4" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt id="tenor.models.Media.mp4">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">mp4</span></code><a class="headerlink" href="#tenor.models.Media.mp4" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a <cite>MP4</cite> object. Contains Media Properties.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -464,9 +461,9 @@
 </dl>
 </dd></dl>
 
-<dl class="py property">
-<dt class="sig sig-object py" id="tenor.models.Media.nano_gif">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">nano_gif</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional[tenor.models.NanoGIF]</span></em><a class="headerlink" href="#tenor.models.Media.nano_gif" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt id="tenor.models.Media.nano_gif">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">nano_gif</span></code><a class="headerlink" href="#tenor.models.Media.nano_gif" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a <cite>NanoGIF</cite> object. Contains Media Properties.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -478,9 +475,9 @@
 </dl>
 </dd></dl>
 
-<dl class="py property">
-<dt class="sig sig-object py" id="tenor.models.Media.nano_mp4">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">nano_mp4</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional[tenor.models.NanoMP4]</span></em><a class="headerlink" href="#tenor.models.Media.nano_mp4" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt id="tenor.models.Media.nano_mp4">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">nano_mp4</span></code><a class="headerlink" href="#tenor.models.Media.nano_mp4" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a <cite>NanoMP4</cite> object. Contains Media Properties.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -492,9 +489,9 @@
 </dl>
 </dd></dl>
 
-<dl class="py property">
-<dt class="sig sig-object py" id="tenor.models.Media.tiny_gif">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">tiny_gif</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional[tenor.models.TinyGIF]</span></em><a class="headerlink" href="#tenor.models.Media.tiny_gif" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt id="tenor.models.Media.tiny_gif">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">tiny_gif</span></code><a class="headerlink" href="#tenor.models.Media.tiny_gif" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a <cite>TinyGIF</cite> object. Contains Media Properties.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -506,9 +503,9 @@
 </dl>
 </dd></dl>
 
-<dl class="py property">
-<dt class="sig sig-object py" id="tenor.models.Media.tiny_mp4">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">tiny_mp4</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional[tenor.models.TinyMP4]</span></em><a class="headerlink" href="#tenor.models.Media.tiny_mp4" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt id="tenor.models.Media.tiny_mp4">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">tiny_mp4</span></code><a class="headerlink" href="#tenor.models.Media.tiny_mp4" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a <cite>TinyMP4</cite> object. Contains Media Properties.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -520,9 +517,9 @@
 </dl>
 </dd></dl>
 
-<dl class="py property">
-<dt class="sig sig-object py" id="tenor.models.Media.tiny_webm">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">tiny_webm</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional[tenor.models.TinyWebM]</span></em><a class="headerlink" href="#tenor.models.Media.tiny_webm" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt id="tenor.models.Media.tiny_webm">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">tiny_webm</span></code><a class="headerlink" href="#tenor.models.Media.tiny_webm" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a <cite>TinyWebM</cite> object. Contains Media Properties.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -534,9 +531,9 @@
 </dl>
 </dd></dl>
 
-<dl class="py property">
-<dt class="sig sig-object py" id="tenor.models.Media.url">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">url</span></span><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="headerlink" href="#tenor.models.Media.url" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt id="tenor.models.Media.url">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">url</span></code><a class="headerlink" href="#tenor.models.Media.url" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a quick access url for the <cite>Media</cite> object. Usually a <cite>GIF</cite> file type.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -548,9 +545,9 @@
 </dl>
 </dd></dl>
 
-<dl class="py property">
-<dt class="sig sig-object py" id="tenor.models.Media.webm">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">webm</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional[tenor.models.WebM]</span></em><a class="headerlink" href="#tenor.models.Media.webm" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt id="tenor.models.Media.webm">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">webm</span></code><a class="headerlink" href="#tenor.models.Media.webm" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a <cite>WebM</cite> object. Contains Media Properties.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -565,30 +562,30 @@
 </dd></dl>
 
 <dl class="py class">
-<dt class="sig sig-object py" id="tenor.models.MediumGIF">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">tenor.models.</span></span><span class="sig-name descname"><span class="pre">MediumGIF</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tenor/models.html#MediumGIF"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tenor.models.MediumGIF" title="Permalink to this definition">¶</a></dt>
+<dt id="tenor.models.MediumGIF">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">tenor.models.</span></code><code class="sig-name descname"><span class="pre">MediumGIF</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tenor/models.html#MediumGIF"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tenor.models.MediumGIF" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#tenor.models.GIF" title="tenor.models.GIF"><code class="xref py py-class docutils literal notranslate"><span class="pre">tenor.models.GIF</span></code></a></p>
 </dd></dl>
 
 <dl class="py class">
-<dt class="sig sig-object py" id="tenor.models.NanoGIF">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">tenor.models.</span></span><span class="sig-name descname"><span class="pre">NanoGIF</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tenor/models.html#NanoGIF"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tenor.models.NanoGIF" title="Permalink to this definition">¶</a></dt>
+<dt id="tenor.models.NanoGIF">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">tenor.models.</span></code><code class="sig-name descname"><span class="pre">NanoGIF</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tenor/models.html#NanoGIF"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tenor.models.NanoGIF" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#tenor.models.GIF" title="tenor.models.GIF"><code class="xref py py-class docutils literal notranslate"><span class="pre">tenor.models.GIF</span></code></a></p>
 </dd></dl>
 
 <dl class="py class">
-<dt class="sig sig-object py" id="tenor.models.NanoMP4">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">tenor.models.</span></span><span class="sig-name descname"><span class="pre">NanoMP4</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tenor/models.html#NanoMP4"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tenor.models.NanoMP4" title="Permalink to this definition">¶</a></dt>
+<dt id="tenor.models.NanoMP4">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">tenor.models.</span></code><code class="sig-name descname"><span class="pre">NanoMP4</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tenor/models.html#NanoMP4"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tenor.models.NanoMP4" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#tenor.models.MP4" title="tenor.models.MP4"><code class="xref py py-class docutils literal notranslate"><span class="pre">tenor.models.MP4</span></code></a></p>
 </dd></dl>
 
 <dl class="py class">
-<dt class="sig sig-object py" id="tenor.models.TenorResponse">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">tenor.models.</span></span><span class="sig-name descname"><span class="pre">TenorResponse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tenor/models.html#TenorResponse"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tenor.models.TenorResponse" title="Permalink to this definition">¶</a></dt>
+<dt id="tenor.models.TenorResponse">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">tenor.models.</span></code><code class="sig-name descname"><span class="pre">TenorResponse</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tenor/models.html#TenorResponse"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tenor.models.TenorResponse" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<dl class="py property">
-<dt class="sig sig-object py" id="tenor.models.TenorResponse.media">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">media</span></span><em class="property"><span class="pre">:</span> <span class="pre">List[Optional[tenor.models.Media]]</span></em><a class="headerlink" href="#tenor.models.TenorResponse.media" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt id="tenor.models.TenorResponse.media">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">media</span></code><a class="headerlink" href="#tenor.models.TenorResponse.media" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generates the media objects and returns them in a list.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -600,9 +597,9 @@
 </dl>
 </dd></dl>
 
-<dl class="py property">
-<dt class="sig sig-object py" id="tenor.models.TenorResponse.raw">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">raw</span></span><em class="property"><span class="pre">:</span> <span class="pre">dict</span></em><a class="headerlink" href="#tenor.models.TenorResponse.raw" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt id="tenor.models.TenorResponse.raw">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">raw</span></code><a class="headerlink" href="#tenor.models.TenorResponse.raw" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the raw json payload received from the Tenor API.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -617,26 +614,26 @@
 </dd></dl>
 
 <dl class="py class">
-<dt class="sig sig-object py" id="tenor.models.TinyGIF">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">tenor.models.</span></span><span class="sig-name descname"><span class="pre">TinyGIF</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tenor/models.html#TinyGIF"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tenor.models.TinyGIF" title="Permalink to this definition">¶</a></dt>
+<dt id="tenor.models.TinyGIF">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">tenor.models.</span></code><code class="sig-name descname"><span class="pre">TinyGIF</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tenor/models.html#TinyGIF"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tenor.models.TinyGIF" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#tenor.models.GIF" title="tenor.models.GIF"><code class="xref py py-class docutils literal notranslate"><span class="pre">tenor.models.GIF</span></code></a></p>
 </dd></dl>
 
 <dl class="py class">
-<dt class="sig sig-object py" id="tenor.models.TinyMP4">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">tenor.models.</span></span><span class="sig-name descname"><span class="pre">TinyMP4</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tenor/models.html#TinyMP4"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tenor.models.TinyMP4" title="Permalink to this definition">¶</a></dt>
+<dt id="tenor.models.TinyMP4">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">tenor.models.</span></code><code class="sig-name descname"><span class="pre">TinyMP4</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tenor/models.html#TinyMP4"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tenor.models.TinyMP4" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#tenor.models.MP4" title="tenor.models.MP4"><code class="xref py py-class docutils literal notranslate"><span class="pre">tenor.models.MP4</span></code></a></p>
 </dd></dl>
 
 <dl class="py class">
-<dt class="sig sig-object py" id="tenor.models.TinyWebM">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">tenor.models.</span></span><span class="sig-name descname"><span class="pre">TinyWebM</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tenor/models.html#TinyWebM"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tenor.models.TinyWebM" title="Permalink to this definition">¶</a></dt>
+<dt id="tenor.models.TinyWebM">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">tenor.models.</span></code><code class="sig-name descname"><span class="pre">TinyWebM</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tenor/models.html#TinyWebM"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tenor.models.TinyWebM" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#tenor.models.WebM" title="tenor.models.WebM"><code class="xref py py-class docutils literal notranslate"><span class="pre">tenor.models.WebM</span></code></a></p>
 </dd></dl>
 
 <dl class="py class">
-<dt class="sig sig-object py" id="tenor.models.WebM">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">tenor.models.</span></span><span class="sig-name descname"><span class="pre">WebM</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tenor/models.html#WebM"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tenor.models.WebM" title="Permalink to this definition">¶</a></dt>
+<dt id="tenor.models.WebM">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">tenor.models.</span></code><code class="sig-name descname"><span class="pre">WebM</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tenor/models.html#WebM"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tenor.models.WebM" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#tenor.models.GIF" title="tenor.models.GIF"><code class="xref py py-class docutils literal notranslate"><span class="pre">tenor.models.GIF</span></code></a></p>
 </dd></dl>
 
@@ -644,64 +641,64 @@
 <div class="section" id="module-tenor.types">
 <span id="tenor-types-module"></span><h2>tenor.types module<a class="headerlink" href="#module-tenor.types" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
-<dt class="sig sig-object py" id="tenor.types.AspectRatio">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">tenor.types.</span></span><span class="sig-name descname"><span class="pre">AspectRatio</span></span><a class="reference internal" href="_modules/tenor/types.html#AspectRatio"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tenor.types.AspectRatio" title="Permalink to this definition">¶</a></dt>
+<dt id="tenor.types.AspectRatio">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">tenor.types.</span></code><code class="sig-name descname"><span class="pre">AspectRatio</span></code><a class="reference internal" href="_modules/tenor/types.html#AspectRatio"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tenor.types.AspectRatio" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <dl class="py method">
-<dt class="sig sig-object py" id="tenor.types.AspectRatio.all">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">all</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tenor/types.html#AspectRatio.all"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tenor.types.AspectRatio.all" title="Permalink to this definition">¶</a></dt>
+<dt id="tenor.types.AspectRatio.all">
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">all</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tenor/types.html#AspectRatio.all"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tenor.types.AspectRatio.all" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="tenor.types.AspectRatio.standard">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">standard</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tenor/types.html#AspectRatio.standard"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tenor.types.AspectRatio.standard" title="Permalink to this definition">¶</a></dt>
+<dt id="tenor.types.AspectRatio.standard">
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">standard</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tenor/types.html#AspectRatio.standard"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tenor.types.AspectRatio.standard" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="tenor.types.AspectRatio.wide">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">wide</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tenor/types.html#AspectRatio.wide"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tenor.types.AspectRatio.wide" title="Permalink to this definition">¶</a></dt>
+<dt id="tenor.types.AspectRatio.wide">
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">wide</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tenor/types.html#AspectRatio.wide"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tenor.types.AspectRatio.wide" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
-<dt class="sig sig-object py" id="tenor.types.ContentFilter">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">tenor.types.</span></span><span class="sig-name descname"><span class="pre">ContentFilter</span></span><a class="reference internal" href="_modules/tenor/types.html#ContentFilter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tenor.types.ContentFilter" title="Permalink to this definition">¶</a></dt>
+<dt id="tenor.types.ContentFilter">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">tenor.types.</span></code><code class="sig-name descname"><span class="pre">ContentFilter</span></code><a class="reference internal" href="_modules/tenor/types.html#ContentFilter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tenor.types.ContentFilter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <dl class="py method">
-<dt class="sig sig-object py" id="tenor.types.ContentFilter.high">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">high</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tenor/types.html#ContentFilter.high"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tenor.types.ContentFilter.high" title="Permalink to this definition">¶</a></dt>
+<dt id="tenor.types.ContentFilter.high">
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">high</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tenor/types.html#ContentFilter.high"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tenor.types.ContentFilter.high" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="tenor.types.ContentFilter.low">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">low</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tenor/types.html#ContentFilter.low"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tenor.types.ContentFilter.low" title="Permalink to this definition">¶</a></dt>
+<dt id="tenor.types.ContentFilter.low">
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">low</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tenor/types.html#ContentFilter.low"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tenor.types.ContentFilter.low" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="tenor.types.ContentFilter.medium">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">medium</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tenor/types.html#ContentFilter.medium"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tenor.types.ContentFilter.medium" title="Permalink to this definition">¶</a></dt>
+<dt id="tenor.types.ContentFilter.medium">
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">medium</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tenor/types.html#ContentFilter.medium"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tenor.types.ContentFilter.medium" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="tenor.types.ContentFilter.off">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">off</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tenor/types.html#ContentFilter.off"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tenor.types.ContentFilter.off" title="Permalink to this definition">¶</a></dt>
+<dt id="tenor.types.ContentFilter.off">
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">off</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tenor/types.html#ContentFilter.off"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tenor.types.ContentFilter.off" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
-<dt class="sig sig-object py" id="tenor.types.MediaFilter">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">tenor.types.</span></span><span class="sig-name descname"><span class="pre">MediaFilter</span></span><a class="reference internal" href="_modules/tenor/types.html#MediaFilter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tenor.types.MediaFilter" title="Permalink to this definition">¶</a></dt>
+<dt id="tenor.types.MediaFilter">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">tenor.types.</span></code><code class="sig-name descname"><span class="pre">MediaFilter</span></code><a class="reference internal" href="_modules/tenor/types.html#MediaFilter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tenor.types.MediaFilter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <dl class="py method">
-<dt class="sig sig-object py" id="tenor.types.MediaFilter.basic">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">basic</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tenor/types.html#MediaFilter.basic"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tenor.types.MediaFilter.basic" title="Permalink to this definition">¶</a></dt>
+<dt id="tenor.types.MediaFilter.basic">
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">basic</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tenor/types.html#MediaFilter.basic"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tenor.types.MediaFilter.basic" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="tenor.types.MediaFilter.minimal">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">minimal</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tenor/types.html#MediaFilter.minimal"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tenor.types.MediaFilter.minimal" title="Permalink to this definition">¶</a></dt>
+<dt id="tenor.types.MediaFilter.minimal">
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">minimal</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tenor/types.html#MediaFilter.minimal"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tenor.types.MediaFilter.minimal" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -723,7 +720,7 @@
 </ul><div class="footer" role="contentinfo">
       &#169; Copyright 2021, moonie.
     <br>
-    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.0.2 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
 </div>
             </div>
           </div>
