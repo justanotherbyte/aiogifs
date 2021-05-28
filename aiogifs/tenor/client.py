@@ -8,6 +8,13 @@ from .models import TenorResponse
 
 class TenorClient:
     def __init__(self, *, api_key: str, session: Optional[ClientSession] = None):
+        """Initialises the TenorClient
+
+        :param api_key: Your API Key for the Tenor API
+        :type api_key: str
+        :param session: Allows for custom session passing. If none is passed, a new session is created, defaults to None
+        :type session: Optional[ClientSession], optional
+        """
         self._auth = api_key
         self.http = HTTPClient(api_key = self._auth, session = session)
         self.open()
