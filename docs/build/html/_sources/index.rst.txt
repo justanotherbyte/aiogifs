@@ -12,6 +12,7 @@ Welcome to aiogifs's documentation!
 
    modules
    tenor
+   giphy
 
 
 Indices and tables

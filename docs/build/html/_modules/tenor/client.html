@@ -204,6 +204,13 @@
 
 <div class="viewcode-block" id="TenorClient"><a class="viewcode-back" href="../../tenor.html#tenor.client.TenorClient">[docs]</a><span class="k">class</span> <span class="nc">TenorClient</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">api_key</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">session</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ClientSession</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="sd">"""Initialises the TenorClient</span>
+
+<span class="sd">        :param api_key: Your API Key for the Tenor API</span>
+<span class="sd">        :type api_key: str</span>
+<span class="sd">        :param session: Allows for custom session passing. If none is passed, a new session is created, defaults to None</span>
+<span class="sd">        :type session: Optional[ClientSession], optional</span>
+<span class="sd">        """</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_auth</span> <span class="o">=</span> <span class="n">api_key</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">http</span> <span class="o">=</span> <span class="n">HTTPClient</span><span class="p">(</span><span class="n">api_key</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_auth</span><span class="p">,</span> <span class="n">session</span> <span class="o">=</span> <span class="n">session</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">()</span>
