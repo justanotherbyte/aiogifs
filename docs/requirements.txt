@@ -1,2 +1,3 @@
 sphinx-press-theme
 myst-parser
+aiogifs
