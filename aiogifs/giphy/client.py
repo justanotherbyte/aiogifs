@@ -41,6 +41,34 @@ class GiphyClient:
         route = Route("/gifs/search", params)
         resp = await self.http.request(route)
         return GiphyResponse(raw_payload = resp)
+
+    async def trending(self, *, limit: Optional[int] = 25, offset: Optional[int] = 0, rating: Optional[AgeRating] = None, language: Optional[str] = None, user_proxy: Optional[str] = None) -> GiphyResponse:
+        """Fetches the trending GIF's from Giphy.
+
+        :param limit: The maximum number of objects to return, defaults to 25
+        :type limit: Optional[int], optional
+        :param offset: The maximum number of objects to return, defaults to 0
+        :type offset: Optional[int], optional
+        :param rating: Filters results by specified rating, defaults to None
+        :type rating: Optional[AgeRating], optional
+        :param language: Specify default language for regional content, defaults to None
+        :type language: Optional[str], optional
+        :param user_proxy: An ID/proxy for a specific user, defaults to None
+        :type user_proxy: Optional[str], optional
+        :return: A GiphyResponse object. Holds properties such as `.media` and `.meta`.
+        :rtype: GiphyResponse
+        """
+        params = {
+            "limit": limit,
+            "offset": offset,
+            "rating": rating,
+            "lang": language,
+            "random_id": user_proxy
+        }
+        params = self._filter_params(params)
+        route = Route("/gifs/search", params)
+        resp = await self.http.request(route)
+        return GiphyResponse(raw_payload = resp)
         
     def  _filter_params(self, map: dict) -> dict:
         new_dict = {k: v for k, v in map.items() if v is not None}

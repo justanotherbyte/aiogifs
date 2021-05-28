@@ -208,7 +208,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">()</span>
 
 <div class="viewcode-block" id="GiphyClient.search"><a class="viewcode-back" href="../../giphy.html#giphy.client.GiphyClient.search">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">search</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">limit</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="mi">25</span><span class="p">,</span> <span class="n">offset</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">rating</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">AgeRating</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">language</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">user_proxy</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">GiphyResponse</span><span class="p">:</span>
-        <span class="sd">"""[summary]</span>
+        <span class="sd">"""Searches the Giphy API.</span>
 
 <span class="sd">        :param query: Search query term or phrase.</span>
 <span class="sd">        :type query: str</span>
@@ -227,6 +227,34 @@
 <span class="sd">        """</span>
         <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
             <span class="s2">"q"</span><span class="p">:</span> <span class="n">query</span><span class="p">,</span>
+            <span class="s2">"limit"</span><span class="p">:</span> <span class="n">limit</span><span class="p">,</span>
+            <span class="s2">"offset"</span><span class="p">:</span> <span class="n">offset</span><span class="p">,</span>
+            <span class="s2">"rating"</span><span class="p">:</span> <span class="n">rating</span><span class="p">,</span>
+            <span class="s2">"lang"</span><span class="p">:</span> <span class="n">language</span><span class="p">,</span>
+            <span class="s2">"random_id"</span><span class="p">:</span> <span class="n">user_proxy</span>
+        <span class="p">}</span>
+        <span class="n">params</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_filter_params</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+        <span class="n">route</span> <span class="o">=</span> <span class="n">Route</span><span class="p">(</span><span class="s2">"/gifs/search"</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
+        <span class="n">resp</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">route</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">GiphyResponse</span><span class="p">(</span><span class="n">raw_payload</span> <span class="o">=</span> <span class="n">resp</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="GiphyClient.trending"><a class="viewcode-back" href="../../giphy.html#giphy.client.GiphyClient.trending">[docs]</a>    <span class="k">async</span> <span class="k">def</span> <span class="nf">trending</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">limit</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="mi">25</span><span class="p">,</span> <span class="n">offset</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">rating</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">AgeRating</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">language</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">user_proxy</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">GiphyResponse</span><span class="p">:</span>
+        <span class="sd">"""Fetches the trending GIF's from Giphy.</span>
+
+<span class="sd">        :param limit: The maximum number of objects to return, defaults to 25</span>
+<span class="sd">        :type limit: Optional[int], optional</span>
+<span class="sd">        :param offset: The maximum number of objects to return, defaults to 0</span>
+<span class="sd">        :type offset: Optional[int], optional</span>
+<span class="sd">        :param rating: Filters results by specified rating, defaults to None</span>
+<span class="sd">        :type rating: Optional[AgeRating], optional</span>
+<span class="sd">        :param language: Specify default language for regional content, defaults to None</span>
+<span class="sd">        :type language: Optional[str], optional</span>
+<span class="sd">        :param user_proxy: An ID/proxy for a specific user, defaults to None</span>
+<span class="sd">        :type user_proxy: Optional[str], optional</span>
+<span class="sd">        :return: A GiphyResponse object. Holds properties such as `.media` and `.meta`.</span>
+<span class="sd">        :rtype: GiphyResponse</span>
+<span class="sd">        """</span>
+        <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
             <span class="s2">"limit"</span><span class="p">:</span> <span class="n">limit</span><span class="p">,</span>
             <span class="s2">"offset"</span><span class="p">:</span> <span class="n">offset</span><span class="p">,</span>
             <span class="s2">"rating"</span><span class="p">:</span> <span class="n">rating</span><span class="p">,</span>
