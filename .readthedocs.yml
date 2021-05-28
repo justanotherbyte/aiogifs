@@ -11,7 +11,6 @@ sphinx:
 
 python:
   version: 3.8
-  method: pip
   path: .
   pip_install: true
   requirements: docs/requirements.txt
