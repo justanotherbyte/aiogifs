@@ -1,6 +1,6 @@
 import aiohttp
 from typing import Optional
-
+import warnings
 
 class Route:
     BASE = "https://g.tenor.com/v1"
@@ -22,7 +22,7 @@ class HTTPClient:
             self.__session = aiohttp.ClientSession(raise_for_status = True)
         else:
             if not self.__session.raise_for_status:
-                self.__session.raise_for_status = True
+                warnings.warn("raise_for_status is not enabled on your ClientSession. No HTTP Error raising is enabled!")
 
     async def request(self, route: Route) -> dict:
         if self._auth and route.params.get("key") is None:
