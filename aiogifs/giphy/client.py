@@ -9,7 +9,6 @@ class GiphyClient:
     def __init__(self, *, api_key: str, session: Optional[ClientSession] = None):
         self._auth = api_key
         self.http = HTTPClient(api_key = self._auth, session = session)
-        self.open()
 
     async def search(self, query: str, *, limit: Optional[int] = 25, offset: Optional[int] = 0, rating: Optional[AgeRating] = None, language: Optional[str] = None, user_proxy: Optional[str] = None) -> GiphyResponse:
         """Searches the Giphy API.
@@ -74,10 +73,10 @@ class GiphyClient:
         new_dict = {k: v for k, v in map.items() if v is not None}
         return new_dict
 
-    async def close(self):
-        """Cleans up. Primarily HTTP Session closing.
+    async def connect(self):
+        """Opens the aiohttp.ClientSession(), thus allowing connections to the Giphy API
         """
-        return await self.http.cleanup()
+        return await self.http.open_session()
 
     def open(self):
         """Called in __init__. Opens the aiohttp.ClientSession()

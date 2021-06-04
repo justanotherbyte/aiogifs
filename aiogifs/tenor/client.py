@@ -17,7 +17,6 @@ class TenorClient:
         """
         self._auth = api_key
         self.http = HTTPClient(api_key = self._auth, session = session)
-        self.open()
 
     async def search(self, query: str, *, locale: Optional[str] = None, content_filter: Optional[ContentFilter] = "off", media_filter: Optional[MediaFilter] = None, ar_range: Optional[AspectRatio] = None, limit: Optional[int] = None, pos: Optional[int] = None, anon_id: Optional[str] = None) -> TenorResponse:
         """Searches tenor with the provided query.
@@ -97,10 +96,10 @@ class TenorClient:
         """
         return await self.http.cleanup()
 
-    def open(self):
-        """Called in __init__. Opens the aiohttp.ClientSession()
+    async def connect(self):
+        """Opens the aiohttp.ClientSession(), thus allowing connections to the Tenor API
         """
-        asyncio.get_event_loop().run_until_complete(self.http.open_session())
+        return await self.http.open_session()
 
     def  _filter_params(self, map: dict) -> dict:
         new_dict = {k: v for k, v in map.items() if v is not None}
