@@ -92,8 +92,7 @@ class GiphyClient:
         return GiphyResponse(raw_payload=resp)
         
     def _filter_params(self, map: dict) -> dict:
-        new_dict = {k: v for k, v in map.items() if v}
-        return new_dict
+        return {k: v for k, v in map.items() if v}
 
     async def connect(self):
         """Opens the aiohttp.ClientSession(), thus allowing connections to the Giphy API"""
