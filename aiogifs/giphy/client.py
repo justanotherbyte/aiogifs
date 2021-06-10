@@ -6,10 +6,11 @@ from aiohttp import ClientSession # just for type hinting
 import asyncio
 
 class GiphyClient:
-    def __init__(self, *, api_key: str, session: Optional[ClientSession] = None):
+    def __init__(self, *, api_key: str, session: Optional[ClientSession] = None, loop: Optional[asyncio.AbstractEventLoop] = None):
         self._auth = api_key
         self.http = HTTPClient(api_key = self._auth, session = session)
-
+        self.loop = loop
+        self.open()
     async def search(self, query: str, *, limit: Optional[int] = 25, offset: Optional[int] = 0, rating: Optional[AgeRating] = None, language: Optional[str] = None, user_proxy: Optional[str] = None) -> GiphyResponse:
         """Searches the Giphy API.
 
@@ -81,4 +82,21 @@ class GiphyClient:
     def open(self):
         """Called in __init__. Opens the aiohttp.ClientSession()
         """
-        asyncio.get_event_loop().run_until_complete(self.http.open_session())
+        if self.loop is None:
+            try:
+                loop = asyncio.get_event_loop()
+                loop.run_until_complete(self.http.open_session())
+            except Exception as exc:
+                try:
+                    loop = asyncio.new_event_loop()
+                    loop.run_until_complete(self.http.open_session())
+                except Exception as exc:
+                    raise RuntimeError("Unable to start session: {}".format(exc))
+
+        else:
+            try:
+                self.loop.run_until_complete(self.http.open_session())
+            except Exception as exc:
+                raise RuntimeError("Unable to start session with provided event loop: {}".format(exc))
+
+        
