@@ -18,6 +18,7 @@ class TenorClient:
         self._auth = api_key
         self.http = HTTPClient(api_key = self._auth, session = session)
         self.loop = loop
+        self.__session = session
         self.open()
     async def search(self, query: str, *, locale: Optional[str] = None, content_filter: Optional[ContentFilter] = "off", media_filter: Optional[MediaFilter] = None, ar_range: Optional[AspectRatio] = None, limit: Optional[int] = None, pos: Optional[int] = None, anon_id: Optional[str] = None) -> TenorResponse:
         """Searches tenor with the provided query.
@@ -100,22 +101,23 @@ class TenorClient:
     def open(self):
         """Called in __init__. Opens the aiohttp.ClientSession()
         """
-        if self.loop is None:
-            try:
-                loop = asyncio.get_event_loop()
-                loop.run_until_complete(self.http.open_session())
-            except Exception as exc:
+        if self.__session is None:
+            if self.loop is None:
                 try:
-                    loop = asyncio.new_event_loop()
+                    loop = asyncio.get_event_loop()
                     loop.run_until_complete(self.http.open_session())
                 except Exception as exc:
-                    raise RuntimeError("Unable to start session: {}".format(exc))
+                    try:
+                        loop = asyncio.new_event_loop()
+                        loop.run_until_complete(self.http.open_session())
+                    except Exception as exc:
+                        raise RuntimeError("Unable to start session: {}".format(exc))
 
-        else:
-            try:
-                self.loop.run_until_complete(self.http.open_session())
-            except Exception as exc:
-                raise RuntimeError("Unable to start session with provided event loop: {}".format(exc))
+            else:
+                try:
+                    self.loop.run_until_complete(self.http.open_session())
+                except Exception as exc:
+                    raise RuntimeError("Unable to start session with provided event loop: {}".format(exc))
 
     def  _filter_params(self, map: dict) -> dict:
         new_dict = {k: v for k, v in map.items() if v is not None}
