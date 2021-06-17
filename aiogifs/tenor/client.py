@@ -107,6 +107,5 @@ class TenorClient:
         if self.__session is None:
             asyncio.create_task(self.http.open_session())
 
-    def  _filter_params(self, map: Dict[str, Optional[Any]]) -> Dict[str, Any]:
-        new_dict = {k: v for k, v in map.items() if v is not None}
-        return new_dict
+    def _filter_params(self, map: Dict[str, Optional[Any]]) -> Dict[str, Any]:
+        return {k: v for k, v in map.items() if v is not None}
