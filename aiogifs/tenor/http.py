@@ -3,7 +3,10 @@ from typing import Optional
 import warnings
 
 class Route:
+    __slots__ = ("BASE", "method", "endpoint", "url", "params")
+    
     BASE = "https://g.tenor.com/v1"
+    
     def __init__(self, endpoint: str, params: dict, method: str = "GET", **kwargs):
         self.method = method
         self.endpoint = endpoint
@@ -13,6 +16,8 @@ class Route:
 
 
 class HTTPClient:
+    __slots__ = ("__session", "_auth")
+
     def __init__(self, *, api_key: Optional[str] = None, session: Optional[aiohttp.ClientSession] = None):
         self.__session = session
         self._auth = api_key
