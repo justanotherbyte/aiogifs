@@ -102,22 +102,7 @@ class TenorClient:
         """Called in __init__. Opens the aiohttp.ClientSession()
         """
         if self.__session is None:
-            if self.loop is None:
-                try:
-                    loop = asyncio.get_event_loop()
-                    loop.run_until_complete(self.http.open_session())
-                except Exception as exc:
-                    try:
-                        loop = asyncio.new_event_loop()
-                        loop.run_until_complete(self.http.open_session())
-                    except Exception as exc:
-                        raise RuntimeError("Unable to start session: {}".format(exc))
-
-            else:
-                try:
-                    self.loop.run_until_complete(self.http.open_session())
-                except Exception as exc:
-                    raise RuntimeError("Unable to start session with provided event loop: {}".format(exc))
+            asyncio.create_task(self.http.open_session())
 
     def  _filter_params(self, map: dict) -> dict:
         new_dict = {k: v for k, v in map.items() if v is not None}
