@@ -1,12 +1,14 @@
 from .http import HTTPClient, Route
 import asyncio
 from aiohttp import ClientSession # just for type hinting
-from typing import Optional
+from typing import Optional, Dict, Any
 from .types import MediaFilter, AspectRatio, ContentFilter
 from .models import TenorResponse
 
 
 class TenorClient:
+    __slots__ = ("_auth", "http", "loop", "__session")
+    
     def __init__(self, *, api_key: str, session: Optional[ClientSession] = None, loop: Optional[asyncio.AbstractEventLoop] = None):
         """Initialises the TenorClient
 
@@ -20,6 +22,7 @@ class TenorClient:
         self.loop = loop
         self.__session = session
         self.open()
+
     async def search(self, query: str, *, locale: Optional[str] = None, content_filter: Optional[ContentFilter] = "off", media_filter: Optional[MediaFilter] = None, ar_range: Optional[AspectRatio] = None, limit: Optional[int] = None, pos: Optional[int] = None, anon_id: Optional[str] = None) -> TenorResponse:
         """Searches tenor with the provided query.
 
@@ -104,6 +107,6 @@ class TenorClient:
         if self.__session is None:
             asyncio.create_task(self.http.open_session())
 
-    def  _filter_params(self, map: dict) -> dict:
+    def  _filter_params(self, map: Dict[str, Optional[Any]]) -> Dict[str, Any]:
         new_dict = {k: v for k, v in map.items() if v is not None}
         return new_dict
