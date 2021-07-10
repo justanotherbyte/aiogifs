@@ -19,7 +19,7 @@ setup(
     description=DESCRIPTION,
     long_description_content_type="text/markdown",
     long_description=open("README.md").read(),
-    packages=find_packages(),
+    packages=["aiogifs", "aiogifs/tenor", "aiogifs/giphy"],
     extras_require = extras_require,
     install_requires=['aiohttp'],
     keywords=["python", "aiohttp", "tenor", "giphy", "api", "async", "await"],
