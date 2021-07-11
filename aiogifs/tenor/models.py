@@ -2,93 +2,25 @@ from typing import List, Union, Optional
 
 
 class MP4:
+    __slots__ = ("_data", "size", "dimensions", "duration", "preview_url", "url")
+
     def __init__(self, *, data: dict):
-        self._data = data
-    
-    @property
-    def size(self) -> int:
-        """Returns an integer representing the size of the `MP4`.
+        self.size = data.get("size")
+        self.dimensions = data.get("dims")
+        self.duration = data.get("duration")
+        self.preview_url = data.get("preview")
+        self.url = data.get("url")
 
-        :return: An integer representing the size of the `MP4`.
-        :rtype: int
-        """
-        return self._data.get("size")
-    
-    @property
-    def dimensions(self) -> List[int]:
-        """Returns a List of integers representing x and y properties
-
-        :return: A List of integers.
-        :rtype: List[int]
-        """
-        return self._data.get("dims")
-    
-    @property
-    def duration(self) -> Union[float, int]:
-        """Returns either a float or an integer representing how long the MP4 is in milliseconds.
-
-        :return: A float or an integer representing how long the MP4 is in milliseconds.
-        :rtype: Union[float, int]
-        """
-        return self._data.get("duration")
-
-    @property
-    def preview_url(self) -> str:
-        """Returns a preview_url. This is usually of a `png` file type.
-
-        :return: A preview_url.
-        :rtype: str
-        """
-        return self._data.get("preview")
-    
-    @property
-    def url(self) -> str:
-        """Returns the `real` url of the MP4.
-
-        :return: The url of our MP4
-        :rtype: str
-        """
-        return self._data.get("url")
 
 class GIF:
+    __slots__ = ("size", "dimensions", "preview_url", "url")
+    
     def __init__(self, *, data: dict):
-        self._data = data
+        self.size = data.get("size")
+        self.dimensions = data.get("dims")
+        self.preview_url = data.get("preview")
+        self.url = data.get("url")
     
-    @property
-    def size(self) -> int:
-        """Returns an integer representing the size of the `GIF`.
-
-        :return: An integer representing the size of the `GIF`.
-        :rtype: int
-        """
-        return self._data.get("size")
-    
-    @property
-    def dimensions(self) -> List[int]:
-        """Returns a List of integers representing x and y properties
-
-        :return: A List of integers.
-        :rtype: List[int]
-        """
-        return self._data.get("dims")
-
-    @property
-    def preview_url(self) -> str:
-        """Returns a preview_url. This is usually of a `png` file type.
-
-        :return: A preview_url.
-        :rtype: str
-        """
-        return self._data.get("preview")
-    
-    @property
-    def url(self) -> str:
-        """Returns the `real` url of the GIF.
-
-        :return: The url of our GIF
-        :rtype: str
-        """
-        return self._data.get("url")
 
 class WebM(GIF):
     pass
